@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Object checking</title>
+</head>
+<body>
+        <h4 id="company"></h4>
+    <p id="demo"></p>
+<br>
+
+<h4 id="ingenuity"></h4>
+    <p id="demo1"></p>
+
+  <p style="display: inline-block"><br>Result:</p><b> <p id="Result"></p></b>
+  <p id="Result02"></p>
+
+
+
+    
+    
+    <Script> 
+    "USE STRICT"
+  
+    let company ={
+        name: "Raman",
+        age:    21,
+
+
+        name01: "sahil",
+        s_age:    21,
+
+        name02: "manish",
+        m_age:    21,
+
+        name03: "naveen",
+         n_age:    21
+
+    } ;
+
+
+
+   
+
+
+    let ingenuity ={
+        name: "Raman",
+        age:    21,
+
+
+        name01: "sahil",
+        s_age:    21,
+
+        
+
+        name02: "manish",
+        m_age:    21,
+
+         name03: "naveen",
+         n_age:    21,
+
+    
+
+    } ;
+
+
+
+   
+   var txt=" ";
+   var txt2=" ";
+for (var x in company) {
+    txt += company[x]+ "<br/>";
+}
+    for ( y in ingenuity) {
+    txt2 += ingenuity[y] + "<br/>";
+    
+    }
+    
+    
+    document.getElementById("demo").innerHTML = txt;
+    document.getElementById("demo1").innerHTML = txt2;
+    document.getElementById('company').innerHTML="Company Name";
+
+    document.getElementById('ingenuity').innerHTML="ingenuity";
+
+ 
+ if (typeof company==='undefined' || typeof ingenuity==='undefined')
+ {
+    document.getElementById("Result").innerHTML="one object is missing";
+
+
+}
+   else if(Object.keys(company).length !== Object.keys(ingenuity).length ){
+        document.getElementById("Result").innerHTML="Objects length doesn't match";
+
+    
+    }
+
+else if (JSON.stringify(company) === JSON.stringify(ingenuity)) {
+    document.getElementById("Result").innerHTML="Objects and Index properties do match";
+ }
+
+ 
+
+  
+
+
+   
+    </Script>
+    
+</body>
+</html>
